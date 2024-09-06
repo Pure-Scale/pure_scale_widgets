@@ -6,3 +6,5 @@
 - regular widgets
   - grid
   - glass_container
+  - login
+  - register
