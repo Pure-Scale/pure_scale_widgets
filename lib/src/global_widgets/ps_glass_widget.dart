@@ -6,10 +6,10 @@ class PSGlassWidget extends StatelessWidget {
   final double opacity;
 
   const PSGlassWidget({
-    Key? key,
+    super.key,
     required this.child,
     this.opacity = 0.1,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

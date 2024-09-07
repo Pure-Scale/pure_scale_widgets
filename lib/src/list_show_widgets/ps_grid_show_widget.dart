@@ -5,10 +5,10 @@ class PSGridShowWidget extends StatelessWidget {
   final int crossAxisCount;
 
   const PSGridShowWidget({
-    Key? key,
+    super.key,
     required this.children,
     this.crossAxisCount = 2,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
