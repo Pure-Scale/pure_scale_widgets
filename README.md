@@ -23,20 +23,20 @@ import 'package:pure_scale_widgets/pure_scale_widgets.dart';
 
 ### Global Widgets
  
-- 'PSGlassWidget' - A widget that displays a glass effect.
-- 'PSBackgroundWidget' - A widget that displays a background effect.
+- `PSGlassWidget` - A widget that displays a glass effect.
+- `PSBackgroundWidget` - A widget that displays a background effect.
 
-### List Show Widgets
+### List Widgets
 
-- 'PSListShowWidget' - A widget that displays a list of items.
-- 'PSGridShowWidget' - A widget that displays a grid of items.
+- `PSListShowWidget` - A widget that displays a list of items.
+- `PSGridShowWidget` - A widget that displays a grid of items.
 
 ### Button Widgets
 
-- 'PSPrimaryButton' - A primary button widget with Filled style.
-- 'PSSecondaryButton' - A secondary button widget with Outlined style.
+- `PSPrimaryButton` - A primary button widget with Filled style.
+- `PSSecondaryButton` - A secondary button widget with Outlined style.
 
 ### Loader Widgets
 
-- 'PSLoaderWidget' - A loader widget that displays a loading indicator. 
-- 'PSShimmerLoaderWidget' - A shimmer loader widget that displays a shimmer loading effect.
+- `PSLoaderWidget` - A loader widget that displays a loading indicator. 
+- `PSShimmerLoaderWidget` - A shimmer loader widget that displays a shimmer loading effect.
