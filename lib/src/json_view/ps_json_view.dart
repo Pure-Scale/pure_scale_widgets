@@ -6,28 +6,13 @@ enum PSJsonViewLayoutMode { Horizontal, Vertical }
 class PSJsonView extends StatelessWidget {
   final Map<String, dynamic> json;
   final PSJsonViewLayoutMode layout;
-
-  static const PSJsonView sampleJsonView = PSJsonView(
-    json: {
-      'date': "Feb-03-2024",
-      'total_amount': 100.50,
-      'name': 'John Doe',
-      'details': {
-        'age': 30,
-        'city': 'New York',
-        'details': {
-          'age': 30,
-          'city': 'New York',
-        },
-      },
-    },
-    layout: PSJsonViewLayoutMode.Horizontal,
-  );
+  final bool subObject;
 
   const PSJsonView({
     Key? key,
     required this.json,
     this.layout = PSJsonViewLayoutMode.Vertical,
+    this.subObject = false,
   }) : super(key: key);
 
   @override
@@ -96,7 +81,7 @@ class PSJsonView extends StatelessWidget {
             .any((term) => key.contains(term))) {
       return Text('\$${value.toStringAsFixed(2)}');
     } else if (value is Map<String, dynamic>) {
-      return PSJsonView(json: value, layout: layout);
+      return PSJsonView(json: value, layout: layout, subObject: true);
     } else {
       return Text(value.toString());
     }
