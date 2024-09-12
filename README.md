@@ -26,7 +26,7 @@ import 'package:pure_scale_widgets/pure_scale_widgets.dart';
 - `PSGlassWidget` - A widget that displays a glass effect.
 - `PSBackgroundWidget` - A widget that displays a background effect.
 
-### List Show Widgets
+### List Widgets
 
 - `PSListShowWidget` - A widget that displays a list of items.
 - `PSGridShowWidget` - A widget that displays a grid of items.
