@@ -1,36 +1,90 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 
+enum PSJsonViewLayoutMode { Horizontal, Vertical }
 
 class PSJsonView extends StatelessWidget {
   final Map<String, dynamic> json;
+  final PSJsonViewLayoutMode layout;
 
-  const PSJsonView({Key? key, required this.json}) : super(key: key);
+  static const PSJsonView sampleJsonView = PSJsonView(
+    json: {
+      'date': "Feb-03-2024",
+      'total_amount': 100.50,
+      'name': 'John Doe',
+      'details': {
+        'age': 30,
+        'city': 'New York',
+        'details': {
+          'age': 30,
+          'city': 'New York',
+        },
+      },
+    },
+    layout: PSJsonViewLayoutMode.Horizontal,
+  );
+
+  const PSJsonView({
+    Key? key,
+    required this.json,
+    this.layout = PSJsonViewLayoutMode.Vertical,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: json.entries
-            .map((entry) => _buildElement(entry.key, entry.value))
-            .toList(),
-      ),
+      scrollDirection: layout == PSJsonViewLayoutMode.Horizontal
+          ? Axis.horizontal
+          : Axis.vertical,
+      child: layout == PSJsonViewLayoutMode.Horizontal
+          ? Row(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: json.entries
+                  .map((entry) => _buildElement(entry.key, entry.value))
+                  .toList(),
+            )
+          : Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: json.entries
+                  .map((entry) => _buildElement(entry.key, entry.value))
+                  .toList(),
+            ),
     );
   }
 
   Widget _buildElement(String key, dynamic value) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 8.0),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Text(key, style: TextStyle(fontWeight: FontWeight.bold)),
-          SizedBox(height: 4),
-          _buildValue(key, value), // Pass the key here
-        ],
-      ),
+    final formattedKey = formatKeyToTitleCase(key);
+    final keyWidget = Text(
+      formattedKey,
+      style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
     );
+    final valueWidget = _buildValue(key, value);
+
+    if (layout == PSJsonViewLayoutMode.Vertical) {
+      return Padding(
+        padding: const EdgeInsets.symmetric(vertical: 12.0, horizontal: 8.0),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            keyWidget,
+            SizedBox(height: 4),
+            valueWidget,
+          ],
+        ),
+      );
+    } else {
+      return Padding(
+        padding: const EdgeInsets.symmetric(vertical: 12.0, horizontal: 8.0),
+        child: Row(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            keyWidget,
+            SizedBox(height: 4),
+            valueWidget,
+          ],
+        ),
+      );
+    }
   }
 
   Widget _buildValue(String key, dynamic value) {
@@ -42,9 +96,18 @@ class PSJsonView extends StatelessWidget {
             .any((term) => key.contains(term))) {
       return Text('\$${value.toStringAsFixed(2)}');
     } else if (value is Map<String, dynamic>) {
-      return PSJsonView(json: value);
+      return PSJsonView(json: value, layout: layout);
     } else {
       return Text(value.toString());
     }
+  }
+
+  String formatKeyToTitleCase(String key) {
+    return key
+        .replaceAll(RegExp(r'[-_]'), ' ')
+        .split(' ')
+        .map((word) =>
+            word.isEmpty ? '' : '${word[0].toUpperCase()}${word.substring(1)}')
+        .join(' ');
   }
 }
