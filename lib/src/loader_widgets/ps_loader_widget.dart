@@ -4,9 +4,9 @@ class PSLoaderWidget extends StatelessWidget {
   final Color color;
 
   const PSLoaderWidget({
-    Key? key,
+    super.key,
     this.color = Colors.blue,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

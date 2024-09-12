@@ -8,12 +8,12 @@ class PSGlassWidget extends StatelessWidget {
   final BorderRadiusGeometry borderRadius;
 
   const PSGlassWidget({
-    Key? key,
+    super.key,
     required this.child,
     this.opacity = 0.1,
     this.show = true,
     this.borderRadius = BorderRadius.zero,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

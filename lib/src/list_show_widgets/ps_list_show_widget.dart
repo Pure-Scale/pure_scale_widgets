@@ -4,9 +4,9 @@ class PSListShowWidget extends StatelessWidget {
   final List<Widget> children;
 
   const PSListShowWidget({
-    Key? key,
+    super.key,
     required this.children,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
