@@ -25,11 +25,18 @@ import 'package:pure_scale_widgets/pure_scale_widgets.dart';
  
 - `PSGlassWidget` - A widget that displays a glass effect.
 - `PSBackgroundWidget` - A widget that displays a background effect.
+- `PSCardWidget` - A customizable card widget with shadow and rounded corners.
 
-### List Widgets
+### Data Widgets
 
 - `PSListShowWidget` - A widget that displays a list of items.
 - `PSGridShowWidget` - A widget that displays a grid of items.
+- `PSDataGridWidget` - A widget that displays a data grid.
+- `PSDataListWidget` - A widget that displays a data list.
+- `PSDataTableWidget` - A widget that displays a data table.
+- `PSDataChartWidget` - A widget that displays a data chart.
+- `PSDataFilterWidget` - A widget that displays a data filter.
+- `PSDataSortWidget` - A widget that displays a data sort.
 
 ### Button Widgets
 
@@ -40,3 +47,12 @@ import 'package:pure_scale_widgets/pure_scale_widgets.dart';
 
 - `PSLoaderWidget` - A loader widget that displays a loading indicator. 
 - `PSShimmerLoaderWidget` - A shimmer loader widget that displays a shimmer loading effect.
+
+### JSON View Widgets
+
+- `PSJsonView` - A widget that displays JSON data in either vertical or horizontal layout.
+- `PSJsonViewDemo` - A demo widget showcasing the usage of PSJsonView.
+
+## Usage Examples
+
+### PSCardWidget
