@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'ps_json_view.dart';
+import 'ps_detail_view.dart';
 
 class PSJsonViewDemo extends StatelessWidget {
   const PSJsonViewDemo({super.key});
