@@ -1,5 +1,4 @@
-import 'package:flutter/material.dart';
-import 'package:shimmer/shimmer.dart';
+part of '../../pure_scale_widgets.dart';
 
 class PSShimmerLoaderWidget extends StatelessWidget {
   final Widget child;

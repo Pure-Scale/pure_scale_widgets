@@ -1,18 +1,23 @@
-import 'package:flutter/material.dart';
+part of '../../pure_scale_widgets.dart';
 
 class PSLoaderWidget extends StatelessWidget {
   final Color color;
+  final bool minimumSize;
 
   const PSLoaderWidget({
     Key? key,
-    this.color = Colors.blue,
+    this.color = Colors.white,
+    this.minimumSize = false,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return Center(
+    return SizedBox(
+      width: minimumSize ? 16 : 24,
+      height: minimumSize ? 16 : 24,
       child: CircularProgressIndicator(
-        valueColor: AlwaysStoppedAnimation<Color>(color),
+        color: color,
+        strokeWidth: minimumSize ? 1 : 2,
       ),
     );
   }

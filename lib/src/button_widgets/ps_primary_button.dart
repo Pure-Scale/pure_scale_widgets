@@ -1,5 +1,4 @@
-import 'package:flutter/material.dart';
-import 'package:pure_scale_widgets/pure_scale_widgets.dart';
+part of '../../pure_scale_widgets.dart';
 
 class PSPrimaryButton extends StatelessWidget {
   final String text;
@@ -18,10 +17,16 @@ class PSPrimaryButton extends StatelessWidget {
     return ElevatedButton(
       onPressed: isLoading ? null : onPressed, // Disable button when loading
       style: ElevatedButton.styleFrom(
-        backgroundColor: Theme.of(context).primaryColor,
-      ),
+          backgroundColor: Theme.of(context).primaryColor,
+          padding: const EdgeInsets.symmetric(
+            horizontal: 20.0,
+            vertical: 16.0,
+          )),
       child: isLoading
-          ? PSLoaderWidget() // Show loader when isLoading is true
+          ? const Padding(
+              padding: EdgeInsets.all(4.0),
+              child: PSLoaderWidget(),
+            ) // Show loader when isLoading is true
           : Text(text),
     );
   }

@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+part of '../../pure_scale_widgets.dart';
 
 class PSCardWidget extends StatelessWidget {
   final Widget child;
