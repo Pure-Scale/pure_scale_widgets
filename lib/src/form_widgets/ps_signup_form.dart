@@ -2,8 +2,8 @@ part of '../../pure_scale_widgets.dart';
 
 class PsSignupForm extends StatefulWidget {
   final Function()? loginAction;
-  final Function()? forgotPasswordAction;
-  final Function(String fName,String lName, String email, String password) signupAction;
+  final Function(String fName, String lName, String email, String password)
+      signupAction;
 
   final RxBool isLoading;
 
@@ -20,7 +20,6 @@ class PsSignupForm extends StatefulWidget {
   final String passwordText;
   final String passwordEnterText;
   final String passwordValidText;
-  final String forgotPasswordText;
   final String alreadyAccountText;
   final String signupText;
 
@@ -29,7 +28,6 @@ class PsSignupForm extends StatefulWidget {
   const PsSignupForm({
     super.key,
     required this.loginAction,
-    required this.forgotPasswordAction,
     required this.signupAction,
     this.loginText = "Login",
     this.emailText = "Email",
@@ -44,7 +42,6 @@ class PsSignupForm extends StatefulWidget {
     this.passwordText = 'Password',
     this.passwordEnterText = 'Please enter your password',
     this.passwordValidText = 'Password must be at least 6 characters long',
-    this.forgotPasswordText = 'Forgot Password?',
     this.alreadyAccountText = 'Already have an account?',
     this.signupText = 'Sign Up',
     required this.isLoading,
@@ -83,7 +80,7 @@ class _PsSignupFormState extends State<PsSignupForm> {
               mainAxisSize: MainAxisSize.min,
               children: [
                 Text(
-                  widget.loginText,
+                  widget.signupText,
                   style: Theme.of(context).textTheme.headlineMedium,
                 ).marginOnly(bottom: 20),
                 TextFormField(
@@ -166,9 +163,15 @@ class _PsSignupFormState extends State<PsSignupForm> {
                     return null;
                   },
                 ).marginOnly(bottom: 20),
-                TextButton(
-                  onPressed: widget.forgotPasswordAction,
-                  child: Text(widget.forgotPasswordText),
+                Obx(
+                  () => SizedBox(
+                    width: double.infinity,
+                    child: PSPrimaryButton(
+                      isLoading: widget.isLoading.value,
+                      text: widget.signupText,
+                      onPressed: onSubmitAction,
+                    ),
+                  ),
                 ).marginOnly(bottom: 10),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
