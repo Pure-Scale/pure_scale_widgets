@@ -17,11 +17,11 @@ class PSSecondaryButton extends StatelessWidget {
     return OutlinedButton(
       onPressed: isLoading ? null : onPressed, // Disable button when loading
       style: OutlinedButton.styleFrom(
-          backgroundColor: Theme.of(context).primaryColor,
-          padding: const EdgeInsets.symmetric(
-            horizontal: 20.0,
-            vertical: 16.0,
-          )),
+        padding: const EdgeInsets.symmetric(
+          horizontal: 20.0,
+          vertical: 16.0,
+        ),
+      ),
       child: isLoading
           ? const Padding(
               padding: EdgeInsets.all(4.0),
