@@ -253,6 +253,8 @@ class _CreditCardFormState extends State<CreditCardForm> {
           ),
           const SizedBox(height: 8),
           Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            mainAxisSize: MainAxisSize.max,
             children: [
               PSSecondaryButton(
                 onPressed: widget.onCancel,
