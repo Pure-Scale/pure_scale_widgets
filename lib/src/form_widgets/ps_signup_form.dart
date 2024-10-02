@@ -3,7 +3,7 @@ part of '../../pure_scale_widgets.dart';
 class PsSignupForm extends StatefulWidget {
   final Function()? loginAction;
   final Function()? forgotPasswordAction;
-  final Function({String name,String email, String password,}) signupAction;
+  final Function(String name, String email, String password) signupAction;
 
   final RxBool isLoading;
 
@@ -37,7 +37,6 @@ class PsSignupForm extends StatefulWidget {
     this.signupText = 'Sign Up',
     required this.isLoading,
     required this.privacyAndTermsWidget,
-
   });
 
   @override
@@ -52,9 +51,9 @@ class _PsSignupFormState extends State<PsSignupForm> {
 
   void onSubmitAction() {
     widget.signupAction(
-      name: nameController.text,
-      email: emailController.text,
-      password: passwordController.text,
+      nameController.text,
+      emailController.text,
+      passwordController.text,
     );
   }
 

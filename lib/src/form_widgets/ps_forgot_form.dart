@@ -1,7 +1,7 @@
 part of '../../pure_scale_widgets.dart';
 
 class PsForgotForm extends StatefulWidget {
-  final Function({String email}) resetAction;
+  final Function(String email) resetAction;
   final Function()? backAction;
 
   final RxBool isLoading;
@@ -24,7 +24,6 @@ class PsForgotForm extends StatefulWidget {
     this.emailValidText = 'Please enter a valid email',
     this.backText = 'Back to Login',
     required this.isLoading,
-
   });
 
   @override
@@ -37,9 +36,7 @@ class _PsForgotFormState extends State<PsForgotForm> {
   final passwordController = TextEditingController();
 
   void onSubmitAction() {
-    widget.resetAction(
-      email: emailController.text,
-    );
+    widget.resetAction(emailController.text);
   }
 
   @override
@@ -79,7 +76,7 @@ class _PsForgotFormState extends State<PsForgotForm> {
                 ),
                 const SizedBox(height: 20),
                 Obx(
-                      () => SizedBox(
+                  () => SizedBox(
                     width: double.infinity,
                     child: PSPrimaryButton(
                       text: widget.resetActionText,

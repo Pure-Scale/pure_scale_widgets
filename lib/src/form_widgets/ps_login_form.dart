@@ -1,7 +1,7 @@
 part of '../../pure_scale_widgets.dart';
 
 class PsLoginForm extends StatefulWidget {
-  final Function({String email, String password}) loginAction;
+  final Function(String email, String password) loginAction;
   final Function()? forgotPasswordAction;
   final Function()? signUpAction;
 
@@ -37,7 +37,6 @@ class PsLoginForm extends StatefulWidget {
     this.signupText = 'Sign Up',
     required this.isLoading,
     required this.privacyAndTermsWidget,
-
   });
 
   @override
@@ -51,8 +50,8 @@ class _PsLoginFormState extends State<PsLoginForm> {
 
   void onSubmitAction() {
     widget.loginAction(
-      email: emailController.text,
-      password: passwordController.text,
+      emailController.text,
+      passwordController.text,
     );
   }
 
