@@ -13,6 +13,7 @@ import 'package:text_form_field_wrapper/text_form_field_wrapper.dart';
 part 'src/form_widgets/ps_credit_card_form.dart';
 part 'src/global_widgets/ps_glass_widget.dart';
 part 'src/global_widgets/ps_background_widget.dart';
+part 'src/global_widgets/ps_dropdown_selection.dart';
 part 'src/button_widgets/ps_primary_button.dart';
 part 'src/button_widgets/ps_secondary_button.dart';
 part 'src/loader_widgets/ps_loader_widget.dart';
