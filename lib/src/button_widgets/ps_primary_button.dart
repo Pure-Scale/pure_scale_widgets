@@ -6,11 +6,11 @@ class PSPrimaryButton extends StatelessWidget {
   final bool isLoading; // New parameter for loading state
 
   const PSPrimaryButton({
-    Key? key,
+    super.key,
     required this.text,
     required this.onPressed,
     this.isLoading = false, // Default to false
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -26,7 +26,7 @@ class PSPrimaryButton extends StatelessWidget {
           ? const Padding(
               padding: EdgeInsets.all(4.0),
               child: PSLoaderWidget(),
-            ) // Show loader when isLoading is true
+            )
           : Text(text),
     );
   }

@@ -5,10 +5,10 @@ class PSBackgroundWidget extends StatelessWidget {
   final Color color;
 
   const PSBackgroundWidget({
-    Key? key,
+    super.key,
     required this.child,
     this.color = Colors.white,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

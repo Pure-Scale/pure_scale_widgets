@@ -6,11 +6,11 @@ class PSSecondaryButton extends StatelessWidget {
   final bool isLoading; // New parameter for loading state
 
   const PSSecondaryButton({
-    Key? key,
+    super.key,
     required this.text,
     required this.onPressed,
     this.isLoading = false, // Default to false
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
