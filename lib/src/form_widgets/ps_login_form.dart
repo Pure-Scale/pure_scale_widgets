@@ -124,10 +124,12 @@ class _PsLoginFormState extends State<PsLoginForm> {
                     ),
                   ),
                 ).marginOnly(bottom: 10),
+                if (widget.forgotPasswordAction != null)
                 TextButton(
                   onPressed: widget.forgotPasswordAction,
                   child: Text(widget.forgotPasswordText),
                 ).marginOnly(bottom: 10),
+                if (widget.signUpAction != null)
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
