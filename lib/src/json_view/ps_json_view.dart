@@ -1,5 +1,4 @@
-import 'package:flutter/material.dart';
-import 'package:intl/intl.dart';
+part of '../../pure_scale_widgets.dart';
 
 enum PSJsonViewLayoutMode { Horizontal, Vertical }
 
