@@ -42,8 +42,8 @@ class PSCustomSearchAppbarWidget extends StatelessWidget {
             onChanged: onChanged,
           ),
         ),
-        Row(
-          mainAxisSize: MainAxisSize.min,
+        Wrap(
+          spacing: 8,
           children: actions
               .map(
                 (action) => buildAction(action, context),
@@ -51,6 +51,8 @@ class PSCustomSearchAppbarWidget extends StatelessWidget {
               .toList(),
         )
       ],
+    ).marginSymmetric(
+      vertical: 16,
     );
   }
 
