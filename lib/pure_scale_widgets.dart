@@ -22,6 +22,7 @@ part 'src/global_widgets/ps_dropdown_selection.dart';
 part 'src/button_widgets/ps_primary_button.dart';
 part 'src/button_widgets/ps_secondary_button.dart';
 part 'src/global_widgets/ps_privacy_terms_widget.dart';
+part 'src/global_widgets/ps_custom_search_appbar_widget.dart';
 part 'src/loader_widgets/ps_loader_widget.dart';
 part 'src/loader_widgets/ps_shimmer_loader_widget.dart';
 part 'src/cards_widgets/card_widget.dart';
