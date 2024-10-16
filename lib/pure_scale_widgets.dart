@@ -29,3 +29,5 @@ part 'src/cards_widgets/card_widget.dart';
 part 'src/data_widgets/ps_list_helper.dart';
 part 'src/loader_widgets/ps_item_shimmer.dart';
 part 'src/json_view/ps_json_view.dart';
+part 'src/global_widgets/ps_filter_dialog_view.dart';
+part 'src/global_helper/ps_divider_helper.dart';
