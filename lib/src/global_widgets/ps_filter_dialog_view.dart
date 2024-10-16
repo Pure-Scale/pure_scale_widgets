@@ -16,8 +16,8 @@ class PSFilterDialogView extends StatelessWidget {
 
   const PSFilterDialogView({
     super.key,
-    required this.filterWidth,
-    required this.filterText,
+    this.filterWidth = 300,
+    this.filterText = 'Filter',
     required this.onApply,
     required this.onReset,
     required this.children,
@@ -30,7 +30,7 @@ class PSFilterDialogView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 300,
+      width: filterWidth,
       alignment: Alignment.topCenter,
       padding: padding ??
           const EdgeInsets.only(
