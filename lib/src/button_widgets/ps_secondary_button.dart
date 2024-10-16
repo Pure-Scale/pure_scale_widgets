@@ -2,7 +2,7 @@ part of '../../pure_scale_widgets.dart';
 
 class PSSecondaryButton extends StatelessWidget {
   final String text;
-  final VoidCallback onPressed;
+  final VoidCallback? onPressed;
   final bool isLoading; // New parameter for loading state
 
   const PSSecondaryButton({
