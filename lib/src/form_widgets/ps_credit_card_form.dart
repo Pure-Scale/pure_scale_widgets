@@ -62,6 +62,7 @@ class _CreditCardFormState extends State<CreditCardForm> {
           ),
           TextFormFieldWrapper(
             position: TextFormFieldPosition.top,
+                  borderFocusedColor: Theme.of(context).colorScheme.primary,
             formField: TextFormField(
               controller: cName,
               keyboardType: TextInputType.name,
@@ -94,6 +95,7 @@ class _CreditCardFormState extends State<CreditCardForm> {
           ),
           TextFormFieldWrapper(
             position: TextFormFieldPosition.center,
+            borderFocusedColor: Theme.of(context).colorScheme.primary,
             formField: TextFormField(
               controller: cCardNumber,
               keyboardType: TextInputType.number,
@@ -143,6 +145,7 @@ class _CreditCardFormState extends State<CreditCardForm> {
               Expanded(
                 child: TextFormFieldWrapper(
                   position: TextFormFieldPosition.bottomLeft,
+                  borderFocusedColor: Theme.of(context).colorScheme.primary,
                   formField: TextFormField(
                     scrollPadding: EdgeInsets.zero,
                     controller: cExpiry,
@@ -209,6 +212,7 @@ class _CreditCardFormState extends State<CreditCardForm> {
               Expanded(
                 child: TextFormFieldWrapper(
                   position: TextFormFieldPosition.bottomRight,
+                  borderFocusedColor: Theme.of(context).colorScheme.primary,
                   formField: TextFormField(
                     scrollPadding: EdgeInsets.zero,
                     controller: cSecurity,

@@ -55,7 +55,7 @@ class PSCustomSearchAppbarWidget extends StatelessWidget {
 
   Widget buildAction(ActionModel action, BuildContext context) {
     return action.isMinimal
-        ? IconButton.filled(
+        ? IconButton.filledTonal(
             icon: Icon(action.icon),
             onPressed: action.onTap,
           )
