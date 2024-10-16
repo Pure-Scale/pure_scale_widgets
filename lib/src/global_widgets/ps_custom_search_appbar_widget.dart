@@ -66,38 +66,15 @@ class PSCustomSearchAppbarWidget extends StatelessWidget {
               minHeight: 38,
             ),
           )
-        : InkWell(
-            borderRadius: BorderRadius.circular(12),
-            onTap: action.onTap,
-            child: Container(
-              height: 38,
-              decoration: BoxDecoration(
-                color: Theme.of(context).primaryColor,
-                borderRadius: BorderRadius.circular(12),
-              ),
-              child: Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 12),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Icon(
-                      action.icon,
-                      color: Colors.white,
-                      size: 16,
-                    ),
-                    const SizedBox(width: 4),
-                    Text(
-                      action.title,
-                      style: const TextStyle(
-                        color: Colors.white,
-                        fontWeight: FontWeight.w500,
-                        fontSize: 14,
-                      ),
-                    ),
-                  ],
-                ),
-              ),
+        : ElevatedButton.icon(
+            style: ElevatedButton.styleFrom(
+              backgroundColor: Theme.of(context).primaryColor,
+              minimumSize: const Size(60, 38),
+              maximumSize: const Size(double.infinity, 38),
             ),
+            onPressed: action.onTap,
+            icon: Icon(action.icon),
+            label: Text(action.title),
           );
   }
 }
