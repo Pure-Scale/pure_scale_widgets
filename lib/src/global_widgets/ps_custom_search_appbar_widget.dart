@@ -34,9 +34,6 @@ class PSCustomSearchAppbarWidget extends StatelessWidget {
                       onPressed: onClear,
                     )
                   : null,
-              border: OutlineInputBorder(
-                borderRadius: BorderRadius.circular(30),
-              ),
               isDense: true,
             ),
             onChanged: onChanged,
@@ -61,17 +58,8 @@ class PSCustomSearchAppbarWidget extends StatelessWidget {
         ? IconButton.filled(
             icon: Icon(action.icon),
             onPressed: action.onTap,
-            constraints: const BoxConstraints(
-              minWidth: 38,
-              minHeight: 38,
-            ),
           )
         : ElevatedButton.icon(
-            style: ElevatedButton.styleFrom(
-              backgroundColor: Theme.of(context).primaryColor,
-              minimumSize: const Size(60, 38),
-              maximumSize: const Size(double.infinity, 38),
-            ),
             onPressed: action.onTap,
             icon: Icon(action.icon),
             label: Text(action.title),
