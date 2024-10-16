@@ -75,6 +75,8 @@ class PSFilterDialogView extends StatelessWidget {
               ).marginSymmetric(horizontal: 16),
               PSDividerHelper.primaryDividerSmall(context),
               ListView.separated(
+                shrinkWrap: true,
+                physics: const NeverScrollableScrollPhysics(),
                 itemBuilder: (context, index) => children[index],
                 separatorBuilder: (context, index) =>
                     dividerWidget ??
