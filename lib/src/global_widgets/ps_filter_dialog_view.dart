@@ -74,7 +74,7 @@ class PSFilterDialogView extends StatelessWidget {
                 ],
               ).marginSymmetric(horizontal: 16),
               PSDividerHelper.primaryDividerSmall(context).marginOnly(
-                bottom: 6,
+                bottom: 8,
               ),
               ListView.separated(
                 shrinkWrap: true,
@@ -84,12 +84,12 @@ class PSFilterDialogView extends StatelessWidget {
                     dividerWidget ??
                     PSDividerHelper.disabledDividerSmall(context)
                         .marginSymmetric(
-                      vertical: 4,
+                      vertical: 6,
                     ),
                 itemCount: children.length,
               ).marginSymmetric(horizontal: 16),
               PSDividerHelper.primaryDividerSmall(context).marginSymmetric(
-                vertical: 6,
+                vertical: 8,
               ),
               Row(
                 children: [
