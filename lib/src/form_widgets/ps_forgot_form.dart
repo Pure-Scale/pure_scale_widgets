@@ -58,11 +58,9 @@ class _PsForgotFormState extends State<PsForgotForm> {
                 TextFormField(
                   controller: emailController,
                   decoration: InputDecoration(
-                    hintText: widget.emailText,
+                    hintText: widget.emailEnterText,
+                    labelText: widget.emailText,
                     prefixIcon: const Icon(Icons.email),
-                    border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(10),
-                    ),
                   ),
                   validator: (value) {
                     if (value == null || value.isEmpty) {

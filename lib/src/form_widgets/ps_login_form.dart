@@ -75,11 +75,9 @@ class _PsLoginFormState extends State<PsLoginForm> {
                   textInputAction: TextInputAction.next,
                   autofillHints: const [AutofillHints.email],
                   decoration: InputDecoration(
-                    hintText: widget.emailText,
+                    hintText: widget.emailEnterText,
+                    labelText: widget.emailText,
                     prefixIcon: const Icon(Icons.email),
-                    border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(10),
-                    ),
                   ),
                   validator: (value) {
                     if (value == null || value.isEmpty) {
@@ -98,11 +96,9 @@ class _PsLoginFormState extends State<PsLoginForm> {
                   textInputAction: TextInputAction.done,
                   onFieldSubmitted: (_) => onSubmitAction(),
                   decoration: InputDecoration(
-                    hintText: widget.passwordText,
+                    hintText: widget.passwordEnterText,
+                    labelText: widget.passwordText,
                     prefixIcon: const Icon(Icons.lock),
-                    border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(10),
-                    ),
                   ),
                   validator: (value) {
                     if (value == null || value.isEmpty) {
@@ -125,31 +121,32 @@ class _PsLoginFormState extends State<PsLoginForm> {
                   ),
                 ).marginOnly(bottom: 10),
                 if (widget.forgotPasswordAction != null)
-                TextButton(
-                  onPressed: widget.forgotPasswordAction,
-                  child: Text(widget.forgotPasswordText),
-                ).marginOnly(bottom: 10),
+                  TextButton(
+                    onPressed: widget.forgotPasswordAction,
+                    child: Text(widget.forgotPasswordText),
+                  ).marginOnly(bottom: 10),
                 if (widget.signUpAction != null)
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Text(widget.dontHaveAccountText),
-                    TextButton(
-                      onPressed: widget.signUpAction,
-                      child: Text(
-                        widget.signupText,
-                        style: Theme.of(context).textTheme.bodySmall!.copyWith(
-                              fontSize: 14,
-                              color: Theme.of(context)
-                                  .buttonTheme
-                                  .colorScheme!
-                                  .primary,
-                              fontWeight: FontWeight.w500,
-                            ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Text(widget.dontHaveAccountText),
+                      TextButton(
+                        onPressed: widget.signUpAction,
+                        child: Text(
+                          widget.signupText,
+                          style:
+                              Theme.of(context).textTheme.bodySmall!.copyWith(
+                                    fontSize: 14,
+                                    color: Theme.of(context)
+                                        .buttonTheme
+                                        .colorScheme!
+                                        .primary,
+                                    fontWeight: FontWeight.w500,
+                                  ),
+                        ),
                       ),
-                    ),
-                  ],
-                ).marginOnly(bottom: 20),
+                    ],
+                  ).marginOnly(bottom: 20),
                 widget.privacyAndTermsWidget,
               ],
             ),

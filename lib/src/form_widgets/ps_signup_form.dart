@@ -88,11 +88,9 @@ class _PsSignupFormState extends State<PsSignupForm> {
                   textInputAction: TextInputAction.next,
                   autofillHints: const [AutofillHints.name],
                   decoration: InputDecoration(
-                    hintText: widget.fNameText,
+                    hintText: widget.fNameEnterText,
+                    labelText: widget.fNameText,
                     prefixIcon: const Icon(Icons.person),
-                    border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(10),
-                    ),
                   ),
                   validator: (value) {
                     if (value == null || value.isEmpty) {
@@ -106,11 +104,9 @@ class _PsSignupFormState extends State<PsSignupForm> {
                   textInputAction: TextInputAction.next,
                   autofillHints: const [AutofillHints.name],
                   decoration: InputDecoration(
-                    hintText: widget.lNameText,
+                    hintText: widget.lNameEnterText,
+                    labelText: widget.lNameText,
                     prefixIcon: const Icon(Icons.person),
-                    border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(10),
-                    ),
                   ),
                   validator: (value) {
                     if (value == null || value.isEmpty) {
@@ -124,11 +120,9 @@ class _PsSignupFormState extends State<PsSignupForm> {
                   textInputAction: TextInputAction.next,
                   autofillHints: const [AutofillHints.email],
                   decoration: InputDecoration(
-                    hintText: widget.emailText,
+                    hintText: widget.emailEnterText,
+                    labelText: widget.emailText,
                     prefixIcon: const Icon(Icons.email),
-                    border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(10),
-                    ),
                   ),
                   validator: (value) {
                     if (value == null || value.isEmpty) {
@@ -147,11 +141,9 @@ class _PsSignupFormState extends State<PsSignupForm> {
                   textInputAction: TextInputAction.done,
                   onFieldSubmitted: (_) => onSubmitAction(),
                   decoration: InputDecoration(
-                    hintText: widget.passwordText,
+                    hintText: widget.passwordEnterText,
+                    labelText: widget.passwordText,
                     prefixIcon: const Icon(Icons.lock),
-                    border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(10),
-                    ),
                   ),
                   validator: (value) {
                     if (value == null || value.isEmpty) {
