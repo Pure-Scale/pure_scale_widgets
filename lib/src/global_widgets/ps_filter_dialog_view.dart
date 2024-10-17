@@ -31,11 +31,15 @@ class PSFilterDialogView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: filterWidth,
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(16),
+        color: Colors.transparent,
+      ),
       alignment: Alignment.topCenter,
       padding: padding ??
           const EdgeInsets.only(
-            top: 48,
-            right: 4,
+            top: 52,
+            right: 6,
           ),
       child: Material(
         color: Colors.transparent,
