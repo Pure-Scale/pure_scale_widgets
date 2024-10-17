@@ -9,11 +9,6 @@ class PSCustomSearchAppbarWidget extends StatelessWidget {
   final String hintText;
   final VoidCallback onClear;
 
-  // Filter properties
-  final bool showFilter;
-  final VoidCallback? onFilter;
-  final int Function()? filterCount;
-
   const PSCustomSearchAppbarWidget({
     super.key,
     required this.actions,
@@ -21,9 +16,6 @@ class PSCustomSearchAppbarWidget extends StatelessWidget {
     required this.onChanged,
     required this.hintText,
     required this.onClear,
-    this.showFilter = true,
-    this.onFilter,
-    this.filterCount,
   });
 
   @override
@@ -33,44 +25,22 @@ class PSCustomSearchAppbarWidget extends StatelessWidget {
       children: [
         SizedBox(
           width: MediaQuery.of(context).size.width * 0.4,
-          child: Badge(
-            label: controller.text.isNotEmpty
-                ? Icon(
-                    Icons.check_circle_rounded,
-                    color: Theme.of(context).primaryColor,
-                    size: 16,
-                  )
-                : const SizedBox(),
-            child: TextField(
-              controller: controller,
-              decoration: InputDecoration(
-                hintText: hintText,
-                prefixIcon: const Icon(Icons.search),
-                suffixIcon: controller.text.isNotEmpty
-                    ? IconButton(
-                        icon: const Icon(Icons.clear),
-                        onPressed: onClear,
-                      )
-                    : null,
-                isDense: true,
-              ),
-              onChanged: onChanged,
+          child: TextField(
+            controller: controller,
+            decoration: InputDecoration(
+              hintText: hintText,
+              prefixIcon: const Icon(Icons.search),
+              suffixIcon: controller.text.isNotEmpty
+                  ? IconButton(
+                      icon: const Icon(Icons.clear),
+                      onPressed: onClear,
+                    )
+                  : null,
+              isDense: true,
             ),
+            onChanged: onChanged,
           ),
         ),
-        if (showFilter)
-          filterCount != null && filterCount!() > 0
-              ? Badge.count(
-                  count: filterCount!(),
-                  child: IconButton.outlined(
-                    icon: const Icon(Icons.filter_list),
-                    onPressed: onFilter,
-                  ),
-                )
-              : IconButton.outlined(
-                  icon: const Icon(Icons.filter_list),
-                  onPressed: onFilter,
-                ),
         Wrap(
           spacing: 8,
           children: actions
