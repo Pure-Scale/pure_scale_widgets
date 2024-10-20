@@ -47,6 +47,7 @@ class _PsLoginFormState extends State<PsLoginForm> {
   final formKey = GlobalKey<FormState>();
   final emailController = TextEditingController();
   final passwordController = TextEditingController();
+  bool showPassword = false;
 
   void onSubmitAction() {
     widget.loginAction(
@@ -99,6 +100,14 @@ class _PsLoginFormState extends State<PsLoginForm> {
                     hintText: widget.passwordEnterText,
                     labelText: widget.passwordText,
                     prefixIcon: const Icon(Icons.lock),
+                    suffixIcon: IconButton(
+                      onPressed: () => setState(
+                        () => showPassword = !showPassword,
+                      ),
+                      icon: Icon(
+                        showPassword ? Icons.visibility : Icons.visibility_off,
+                      ),
+                    ),
                   ),
                   validator: (value) {
                     if (value == null || value.isEmpty) {
