@@ -92,7 +92,7 @@ class _PsLoginFormState extends State<PsLoginForm> {
                 ).marginOnly(bottom: 10),
                 TextFormField(
                   controller: passwordController,
-                  obscureText: true,
+                  obscureText: !showPassword,
                   autofillHints: const [AutofillHints.password],
                   textInputAction: TextInputAction.done,
                   onFieldSubmitted: (_) => onSubmitAction(),
