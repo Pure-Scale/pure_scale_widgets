@@ -24,6 +24,7 @@ class PsSignupForm extends StatefulWidget {
   final String signupText;
 
   final Widget privacyAndTermsWidget;
+  final double width;
 
   const PsSignupForm({
     super.key,
@@ -46,6 +47,7 @@ class PsSignupForm extends StatefulWidget {
     this.signupText = 'Sign Up',
     required this.isLoading,
     required this.privacyAndTermsWidget,
+    this.width = 300,
   });
 
   @override
@@ -75,7 +77,7 @@ class _PsSignupFormState extends State<PsSignupForm> {
         key: formKey,
         child: SingleChildScrollView(
           child: PSCardWidget(
-            width: 300,
+            width: widget.width,
             child: Column(
               mainAxisSize: MainAxisSize.min,
               children: [

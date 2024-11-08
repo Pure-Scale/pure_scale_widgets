@@ -12,6 +12,7 @@ class PsForgotForm extends StatefulWidget {
   final String emailEnterText;
   final String emailValidText;
   final String backText;
+  final double width;
 
   const PsForgotForm({
     super.key,
@@ -24,6 +25,7 @@ class PsForgotForm extends StatefulWidget {
     this.emailValidText = 'Please enter a valid email',
     this.backText = 'Back to Login',
     required this.isLoading,
+    this.width = 300,
   });
 
   @override
@@ -46,7 +48,7 @@ class _PsForgotFormState extends State<PsForgotForm> {
         key: formKey,
         child: SingleChildScrollView(
           child: PSCardWidget(
-            width: 300,
+            width: widget.width,
             child: Column(
               mainAxisSize: MainAxisSize.min,
               children: [
