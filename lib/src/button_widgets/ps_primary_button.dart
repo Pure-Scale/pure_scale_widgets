@@ -23,10 +23,7 @@ class PSPrimaryButton extends StatelessWidget {
             vertical: 16.0,
           )),
       child: isLoading
-          ? const Padding(
-              padding: EdgeInsets.all(4.0),
-              child: PSLoaderWidget(),
-            )
+          ? const Center(child: PSLoaderWidget(minimumSize: true))
           : Text(text),
     );
   }

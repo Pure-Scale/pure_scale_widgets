@@ -62,12 +62,14 @@ class _PsSignupFormState extends State<PsSignupForm> {
   final passwordController = TextEditingController();
 
   void onSubmitAction() {
-    widget.signupAction(
-      fNameController.text,
-      lNameController.text,
-      emailController.text,
-      passwordController.text,
-    );
+    if (formKey.currentState!.validate()) {
+      widget.signupAction(
+        fNameController.text,
+        lNameController.text,
+        emailController.text,
+        passwordController.text,
+      );
+    }
   }
 
   @override

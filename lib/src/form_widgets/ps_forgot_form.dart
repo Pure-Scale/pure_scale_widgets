@@ -35,10 +35,11 @@ class PsForgotForm extends StatefulWidget {
 class _PsForgotFormState extends State<PsForgotForm> {
   final formKey = GlobalKey<FormState>();
   final emailController = TextEditingController();
-  final passwordController = TextEditingController();
 
   void onSubmitAction() {
-    widget.resetAction(emailController.text);
+    if (formKey.currentState!.validate()) {
+      widget.resetAction(emailController.text);
+    }
   }
 
   @override

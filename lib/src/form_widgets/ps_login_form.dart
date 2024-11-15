@@ -52,10 +52,12 @@ class _PsLoginFormState extends State<PsLoginForm> {
   bool showPassword = false;
 
   void onSubmitAction() {
+    if (formKey.currentState!.validate()) {
     widget.loginAction(
-      emailController.text,
-      passwordController.text,
-    );
+        emailController.text,
+        passwordController.text,
+      );
+    }
   }
 
   @override
