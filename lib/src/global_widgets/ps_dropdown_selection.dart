@@ -44,6 +44,7 @@ class PsDropdownSelection<T> extends StatelessWidget {
             ),
             items: items.map<DropdownMenuItem<T>>((T value) {
               return DropdownMenuItem<T>(
+                key: Key("Item${items.indexOf(value)}"),
                 value: value,
                 child: Text(
                   displayStringForOption(value),
